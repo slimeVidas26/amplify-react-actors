@@ -53,3 +53,5 @@ delete .git
 git  add commit push...
 npm install aws-amplify @aws-amplify/ui-react
 amplify init
+connect github
+amplify push
