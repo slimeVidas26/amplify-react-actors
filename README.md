@@ -49,5 +49,7 @@ amplify publish
 
 git clone [https://github.com/slimeVidas26/amplify-react-basic.git] amplify-react-actors
 npm install
+delete .git
 git  add commit push...
+npm install aws-amplify @aws-amplify/ui-react
 amplify init
