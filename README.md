@@ -55,3 +55,5 @@ npm install aws-amplify @aws-amplify/ui-react
 amplify init
 connect github
 amplify push
+npm install @material-ui/core
+create Home.css
