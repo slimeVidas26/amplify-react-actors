@@ -57,3 +57,7 @@ connect github
 amplify push
 npm install @material-ui/core
 create Home.css
+amplify add api
+amplify push
+
+GraphQL endpoint: [https://7y5bozefdfgq3lz6sveamuzqsi.appsync-api.us-east-1.amazonaws.com/graphql]

@@ -68,6 +68,9 @@ function Home() {
                     </Table>
                 </TableContainer>
             </div>
+            <div className="app__input">
+                
+            </div>
           
         </div>
     )
