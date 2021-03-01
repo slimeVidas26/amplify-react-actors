@@ -63,3 +63,9 @@ amplify add hosting
 amplify publish
 
 GraphQL endpoint: [https://7y5bozefdfgq3lz6sveamuzqsi.appsync-api.us-east-1.amazonaws.com/graphql]
+
+Hosting endpoint: [http://amplifyreactactors-20210301150905-hostingbucket-cinoche.s3-website-us-east-1.amazonaws.com]
+
+Your app is published successfully.
+[http://amplifyreactactors-20210301150905-hostingbucket-cinoche.s3-website-us-east-1.amazonaws.com]
+
