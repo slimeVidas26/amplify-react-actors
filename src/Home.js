@@ -44,6 +44,13 @@ function Home() {
        }
    }
 
+   //setInput
+   const setInput = (key , value,isNumber = false)=>{
+    value = (isNumber) ? parseInt(value) : value;
+       setFormData({...formData , [key] : value})
+
+   }
+
    //addActor
    const addActor = async ()=>{
        try {
@@ -91,10 +98,10 @@ function Home() {
                 </TableContainer>
             </div>
             <div className="app__input">
-                   <input type="text" placeholder = "firstName" value = {formData.firstName} onChange = {(e)=> setFormData({...formData , firstName : e.target.value})}/>
-                   <input type="text" placeholder = "lastName" value = {formData.lastName} onChange = {(e)=> setFormData({...formData , lastName : e.target.value})}/>
-                   <input type="text" placeholder = "age" value = {formData.age} onChange = {(e)=> setFormData({...formData , age : e.target.value})}/>
-                   <input type="text" placeholder = "movies" value = {formData.movies} onChange = {(e)=> setFormData({...formData , movies : e.target.value})}/>
+                   <input type="text" placeholder = "firstName" value = {formData.firstName} onChange = {(e)=> setInput('firstName' , e.target.value)}/>
+                   <input type="text" placeholder = "lastName" value = {formData.lastName} onChange = {(e)=> setInput( 'lastName' , e.target.value)}/>
+                   <input type="text" placeholder = "age" value = {formData.age} onChange = {(e)=> setInput('age' , e.target.value)}/>
+                   <input type="text" placeholder = "movies" value = {formData.movies} onChange = {(e)=> setInput('movies' , e.target.value)}/>
 
                    <button onClick = {addActor}>Create Actor</button>
             </div>
