@@ -21,7 +21,8 @@ Amplify.configure(awsExports);
 
 function Home() {
 
-    const [actors , setActors] = useState([])
+    const [actors , setActors] = useState([]);
+    const [formData , setFormData] = useState({firstName : '' , lastName : '' , age : 0 , movies : ''})
 
     useEffect(()=>{
        //setActors(getActors());
@@ -40,6 +41,20 @@ function Home() {
            
        } catch (error) {
         console.log('error fetching actors') 
+       }
+   }
+
+   //addActor
+   const addActor = async ()=>{
+       try {
+           if(!formData.firstName || !formData.lastName) return
+           const actor = {...formData}
+           setActors([...actors , actor])
+           setFormData({firstName : '' , lastName : '',age : '',movies : ''})
+           await API.graphql(graphqlOperation(createActor,{input : actor}))
+           
+       } catch (err) {
+        console.log('error creating actor:', err)
        }
    }
 
@@ -76,7 +91,12 @@ function Home() {
                 </TableContainer>
             </div>
             <div className="app__input">
+                   <input type="text" placeholder = "firstName" value = {formData.firstName} onChange = {(e)=> setFormData({...formData , firstName : e.target.value})}/>
+                   <input type="text" placeholder = "lastName" value = {formData.lastName} onChange = {(e)=> setFormData({...formData , lastName : e.target.value})}/>
+                   <input type="text" placeholder = "age" value = {formData.age} onChange = {(e)=> setFormData({...formData , age : e.target.value})}/>
+                   <input type="text" placeholder = "movies" value = {formData.movies} onChange = {(e)=> setFormData({...formData , movies : e.target.value})}/>
 
+                   <button onClick = {addActor}>Create Actor</button>
             </div>
           
         </div>
